@@ -1,17 +1,33 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
+import { Router, Route, IndexRedirect, hashHistory } from 'react-router/lib';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+import Page from './layout/Page'
+import {Login} from './page/login';
+import {Publish} from './page/publish';
+import {Draft} from './page/draft';
+import {Edit} from './page/edit';
+import AppRouter from "./routers/AppRouter";
+
+const routes =
+    <Route path={'/'} name={"pc-editor"} components={Page}>
+
+        <IndexRedirect to="/publish" />
+        <Route path={'login'} component={Login} />
+        <Route path={'publish'} component={Publish} />
+        <Route path={'draft'} component={Draft} />
+        <Route path={'edit'} component={Edit} />
+    </Route>;
+
+
+ReactDOM.render(
+    <Provider >
+        <Router history={hashHistory}>
+            {routes}
+        </Router>
+    </Provider>
+    ,
+    document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
