@@ -1,10 +1,7 @@
-// import BasicLayout from '../layouts/BasicLayout';
-// import BlankLayout from '../layouts/BlankLayout';
-
-import {Login} from '../page/login';
-import {Publish} from '../page/publish';
-import {Draft} from '../page/draft';
-import {Edit} from '../page/edit';
+import {Login} from '../pages/login/login';
+import {Publish} from '../pages/publish/publish';
+import {Draft} from '../pages/draft/draft';
+import {Edit} from '../pages/edit/edit';
 
 const config = [
   {

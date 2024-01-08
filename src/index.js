@@ -3,21 +3,25 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRedirect, hashHistory } from 'react-router/lib';
 
-import Page from './layout/Page'
-import {Login} from './page/login';
-import {Publish} from './page/publish';
-import {Draft} from './page/draft';
-import {Edit} from './page/edit';
-import AppRouter from "./routers/AppRouter";
+import {Admin} from './pages/admin/admin';
+import {Login} from './pages/login/login';
+import {Publish} from './pages/publish/publish';
+import {Draft} from './pages/draft/draft';
+import {Edit} from './pages/edit/edit';
 
 const routes =
-    <Route path={'/'} name={"pc-editor"} components={Page}>
+    <Route path={'/'} name={"pc-editor"}>
 
         <IndexRedirect to="/publish" />
+
         <Route path={'login'} component={Login} />
-        <Route path={'publish'} component={Publish} />
-        <Route path={'draft'} component={Draft} />
-        <Route path={'edit'} component={Edit} />
+
+        <Route path='/' component={Admin} >
+            <Route path={'publish'} component={Publish} />
+            <Route path={'draft'} component={Draft} />
+            <Route path={'edit'} component={Edit} />
+        </Route>
+
     </Route>;
 
 

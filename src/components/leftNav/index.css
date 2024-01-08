@@ -1,0 +1,16 @@
+.left-navi {
+    /*background-color: white;*/
+
+    .left-navi-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        width: 100%;
+        & span {
+            color: white;
+            font-size: 20px;
+        }
+    }
+}

@@ -2,8 +2,8 @@ import React, { Suspense } from 'react';
 import LoadingPage from '../components/LoadingPage';
 import config from './config';
 import {Switch} from "antd";
-import {hashHistory, Redirect, Route, Router} from "react-router";
-
+// import {hashHistory, Redirect, Route, Router} from "react-router";
+import { hashHistory, Redirect, Route, Router } from 'react-router/lib';
 const renderRoutes = routes => {
   if (!Array.isArray(routes)) {
     return null;
